@@ -25,6 +25,5 @@ canu \
  -p WGS_assembly \
  -d 01_assembly_out \
  genomeSize=2.6m \
- stopOnReadQuality=false \
- -pacbio-raw /proj/g2021012/3_Christel_2017/DNA_raw_data/ERR2028*fastq.gz
+ -pacbio-raw ~/private/GenomeAnalysis/Data/rawData/DNA_raw_data/ERR2028*fastq.gz
 #--------------------------------------------------
