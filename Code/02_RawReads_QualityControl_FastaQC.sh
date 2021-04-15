@@ -17,4 +17,5 @@ module load FastQC
 # running FastQC
 fastqc -t 2 \
 -o ~/private/GenomeAnalysis/Analyses/differentialExpressionAnalyses/qc_RNARawData \
+-d ~/private/GenomeAnalysis/Analyses/differentialExpressionAnalyses/qc_RNARawData \
 ~/private/GenomeAnalysis/Data/rawData/RNA_raw_data/ERR*.fastq.gz
