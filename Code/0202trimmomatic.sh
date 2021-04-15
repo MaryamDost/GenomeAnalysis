@@ -17,8 +17,8 @@ module load trimmomatic
 # Run trimmomatic in one file, to save some time
 java -jar $TRIMMOMATIC_HOME/trimmomatic.jar \
 PE -threads 2 -phred33 \
--basein ~/private/GenomeAnalysis/Data/rawData/ERR2036629_1.fastq.gz \
--baseout ~/private/GenomeAnalysis/Analyses/02_trimmomatic/ERR2036629_Trimmed.fastq.gz \
+-basein ~/private/GenomeAnalysis/Data/rawData/RNA_raw_data/ERR2036629_1.fastq.gz \
+-baseout ~/private/GenomeAnalysis/Analyses/differentialExpressionAnalyses/2_Trimmomatic/ERR2036629_Trimmed.fastq.gz \
 ILLUMINACLIP:$TRIMMOMATIC_HOME/adapters/TruSeq3-PE.fa:2:30:10 \
 LEADING:20 \
 TRAILING:20 \
