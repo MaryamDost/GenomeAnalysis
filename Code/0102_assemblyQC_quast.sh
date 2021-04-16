@@ -18,4 +18,4 @@ module load quast
 quast.py \
 ~/private/GenomeAnalysis/Analyses/genomeAssembly/01_assembly_out/WGS_assembly.contigs.fasta \
 -R ~/private/GenomeAnalysis/Data/rawData/reference/OBMB01.fasta \
--o ~/private/GenomeAnalysis/Analyses/genomeAssembly/02_assemblyQC
+-o ~/private/GenomeAnalysis/Analyses/genomeAssembly/0201AssemblyQC_quast
