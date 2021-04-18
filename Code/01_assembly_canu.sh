@@ -13,13 +13,13 @@ module load bioinfo-tools
 module load canu
 
 
-#-------- RUN CANU ---------------------------------
+#-------- RUN CANU ----------
 
 # -p prefix filenames
 # -d dir to run in
 # -pacbio-raw specifies the data type (we have raw PacBio reads...)
-# genomeSize needs to be specified (an is taken from article table 2 )
-# stopOnReadQuality as mentioned in the student manual
+# GenomeSize needs to be specified (an is taken from article table 2 )
+# In the lab manual it stated to set stopOnReadQuality = false, but i was advised by the lab reacher not no change the parameter   
 
 canu \
  -p WGS_assembly \
