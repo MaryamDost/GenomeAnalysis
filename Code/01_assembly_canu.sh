@@ -27,3 +27,4 @@ canu \
  genomeSize=2.6m \
  -pacbio-raw ~/private/GenomeAnalysis/Data/rawData/DNA_raw_data/ERR2028*fastq.gz
 #--------------------------------------------------
+# ran Canu with command sbatch 01_assembly_canu.sh
