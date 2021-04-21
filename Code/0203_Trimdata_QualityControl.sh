@@ -18,4 +18,4 @@ module load FastQC
 fastqc -t 2 \
 -o ~/private/GenomeAnalysis/Analyses/differentialExpressionAnalyses//0202_qc_TrimData \
 -d ~/private/GenomeAnalysis/Analyses/differentialExpressionAnalyses//0202_qc_TrimData \
-~/private/GenomeAnalysis/Analyses/differentialExpressionAnalyses/2_Trimmomatic/*.fastq.gz
+~/private/GenomeAnalysis/Data/rawData/*.fastq.gz
