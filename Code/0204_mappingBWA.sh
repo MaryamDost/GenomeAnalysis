@@ -14,7 +14,7 @@ module load bwa samtools
 
 
 #Using this variable when running bwa mem 
-TRIMREADS=~/private/GenomeAnalysis/Data/rawData/RNA_trimmed_reads
+TRIMREADS=~/private/GenomeAnalysis/Data/rawData/RNA_trimmed_reads/
 #move to the directory where i want my outputs to be.
 
 cd ~/private/GenomeAnalysis/Analyses/differentialExpressionAnalyses/03_mappingBWA
