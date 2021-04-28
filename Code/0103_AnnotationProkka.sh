@@ -31,7 +31,7 @@ OUTPUT="~/private/GenomeAnalysis/Analyses/genomeAssembly/0301Annotation_ProkkaLf
 # running prokka
 prokka \
 ~/private/GenomeAnalysis/Analyses/genomeAssembly/01_assembly_out/lferriphilum_genome.fasta \
---force $OUTPUT --prefix lferriphilum --locustag LFT \
+--force $OUTPUT --prefix Lferriphilum --locustag LFT \
 --genus Leptospirillum --species ferriphilum --strain DSM_14647 --gram neg\
 --usegenus --cpus 2 --rfam \
 
