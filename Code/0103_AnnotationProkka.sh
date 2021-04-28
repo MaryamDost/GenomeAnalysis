@@ -21,5 +21,5 @@ module load prokka/1.12-12547ca
 prokka \
 # ~/private/GenomeAnalysis/Analyses/genomeAssembly/01_assembly_out/WGS_assembly.contigs.fasta
 ~/private/GenomeAnalysis/Analyses/genomeAssembly/01_assembly_out/lferriphilum_genome.fasta
---outdir 0301Annotation_Prokkalferriphilum \
---prefix prokkaAnnotation_lferriphilum_genome
+ --outdir 0301Annotation_Prokkalferriphilum \
+ --prefix prokkaAnnotation_lferriphilum_genome
