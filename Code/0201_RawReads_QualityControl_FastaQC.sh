@@ -16,8 +16,8 @@ module load FastQC
 
 
 #--------running FastQC ---------- 
-
-#-o <path> -o <output_dir> Output directory
+# -t flag indicates the number of threads
+# -o <output_dir> Output directory
 # -d dir to run in
 # <input file path>
 
