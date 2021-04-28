@@ -13,9 +13,17 @@
 module load bioinfo-tools
 module load FastQC
 
+#--------running FastQC ---------- 
 
-# running FastQC
+#-o <path> -o <output_dir> Output directory
+# -d dir to run in
+# <input file path>
+
 fastqc -t 2 \
 -o ~/private/GenomeAnalysis/Analyses/differentialExpressionAnalyses//0202_qc_TrimData \
 -d ~/private/GenomeAnalysis/Analyses/differentialExpressionAnalyses//0202_qc_TrimData \
 ~/private/GenomeAnalysis/Data/rawData/RNA_trimmed_reads/*.fastq.gz
+
+#-----------------------------------------------------------------------------------
+# sbatch 0203_Trimdata_QualityControl.sh
+#this script takes the complite path, thus is ranable in anywere in homedirectory in terminal.
