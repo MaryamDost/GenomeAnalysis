@@ -4,7 +4,7 @@
 #SBATCH -p core
 #SBATCH -n 2
 #SBATCH -t 00:10:00
-#SBATCH -J 0104_Annotation_Prokka
+#SBATCH -J 0104_Annotation_ProkkaLF
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user maryam.dost.3945@student.uu.se
 
