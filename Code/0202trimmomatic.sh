@@ -14,7 +14,15 @@
 module load bioinfo-tools
 module load trimmomatic
 
-# Run trimmomatic in one file, to save some time
+#-------------- Run trimmomatic-----------------
+#We will run on one file only, to save some time
+# PE running in paired end mode
+# -threads 2 amount of threads that is used
+# -phred33 the data is encoded with phred33
+#-basein -baseout the input and output files
+#ILLUMINACLIP indicates which adapters are present on the data
+#LEADING, TRAILING, SLIDINGWINDOW, MINLEN and MAXINFO were set according to the setup in the paper
+
 java -jar $TRIMMOMATIC_HOME/trimmomatic.jar \
 PE -threads 2 -phred33 \
 -basein ~/private/GenomeAnalysis/Data/rawData/RNA_raw_data/ERR2036629_1.fastq.gz \
@@ -25,3 +33,7 @@ TRAILING:20 \
 SLIDINGWINDOW:1:3 \
 MINLEN:40 \
 MAXINFO:40:0.5 \
+
+#----------------------------------------------------
+# sbatch <the path>0202trimmomatic.sh
+#this script takes the complite path, thus is ranable in anywere in homedirectory in terminal.
