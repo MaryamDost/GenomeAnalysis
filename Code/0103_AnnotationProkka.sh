@@ -10,7 +10,7 @@
 
 #load modules 
 module load bioinfo-tools
-module load prokka/1.12-12547ca
+module load prokka
 
 #--------- RUN PROKKA --------------------------------
 
