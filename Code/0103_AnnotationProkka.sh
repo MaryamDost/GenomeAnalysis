@@ -24,14 +24,11 @@ module load prokka
 # --outdir 0301Annotation_Prokkalferriphilum \
  #--prefix prokkaAnnotation_lferriphilum_genome
 
-#INPUT="~/private/GenomeAnalysis/Analyses/genomeAssembly/01_assembly_out/lferriphilum_genome.fasta"
-OUTPUT="~/private/GenomeAnalysis/Analyses/genomeAssembly/0301Annotation_ProkkaLferriphilum"
 
-#cd ~/private/GenomeAnalysis/Analyses/genomeAssembly/01_assembly_out/
 # running prokka
 prokka \
 ~/private/GenomeAnalysis/Analyses/genomeAssembly/01_assembly_out/lferriphilum_genome.fasta \
---force $OUTPUT --prefix Lferriphilum --locustag LFT \
+--outdir 0301Annotation_Prokkalferriphilum --prefix Lferriphilum --locustag LFT \
 --genus Leptospirillum --species ferriphilum --strain DSM_14647 --gram neg\
 --usegenus --cpus 2 --rfam \
 
