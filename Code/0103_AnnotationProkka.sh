@@ -24,7 +24,7 @@ module load prokka
 # --outdir 0301Annotation_Prokkalferriphilum \
  #--prefix prokkaAnnotation_lferriphilum_genome
 
-INPUT="~/private/GenomeAnalysis/Analyses/genomeAssembly/01_assembly_out/lferriphilum_genome.fasta"
+#INPUT="~/private/GenomeAnalysis/Analyses/genomeAssembly/01_assembly_out/lferriphilum_genome.fasta"
 OUTPUT="~/private/GenomeAnalysis/Analyses/genomeAssembly/0301Annotation_ProkkaLferriphilum"
 
 #cd ~/private/GenomeAnalysis/Analyses/genomeAssembly/01_assembly_out/
