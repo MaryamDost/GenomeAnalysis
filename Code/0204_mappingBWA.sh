@@ -19,9 +19,11 @@ TRIMREADS=~/private/GenomeAnalysis/Data/rawData/RNA_trimmed_reads/
 
 cd ~/private/GenomeAnalysis/Analyses/differentialExpressionAnalyses/03_mappingBWA
 
-# Run BWA indexing
+#-------------------------------Run BWA indexing--------------------------------------
+
+
 #start by creating Reference Index
-#bwa index -p perifix -a file.fasta
+#bwa index -p perifix input file.fasta
 # -p index name (here lfreedb)
 
 bwa index -p lferrdb ~/private/GenomeAnalysis/Analyses/genomeAssembly/01_assembly_out/lferriphilum_genome.fasta
@@ -29,7 +31,7 @@ bwa index -p lferrdb ~/private/GenomeAnalysis/Analyses/genomeAssembly/01_assembl
 # Run BWA MEM for each experiment (two files of paired reads)
 # and pipe it to SAMtools which creates a bam file and sorts it
 
-#For iteration though files
+#For iteration through files
 
 for i in ERR2036629 ERR2036630 ERR2036631 ERR2036632 ERR2036633 ERR2117288 ERR2117289 ERR2117290 ERR2117291 ERR2117292
 do
@@ -41,3 +43,6 @@ bwa mem -t 2 lferrdb \
 $TRIMREADS${i}_P1.trim.fastq.gz $TRIMREADS${i}_P2.trim.fastq.gz |
 samtools view -S -b | samtools sort -o ${i}.sorted.bam
 done
+
+#-----------------------------------------------------------------------------------------------------------------------------
+# run this code with sbatch
