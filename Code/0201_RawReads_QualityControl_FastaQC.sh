@@ -14,8 +14,18 @@ module load bioinfo-tools
 module load FastQC
 
 
-# running FastQC
+
+#--------running FastQC ---------- 
+
+#-o <path> -o <output_dir> Output directory
+# -d dir to run in
+# <input file path>
+
 fastqc -t 2 \
 -o ~/private/GenomeAnalysis/Analyses/differentialExpressionAnalyses/qc_RNARawData \
 -d ~/private/GenomeAnalysis/Analyses/differentialExpressionAnalyses/qc_RNARawData \
 ~/private/GenomeAnalysis/Data/rawData/RNA_raw_data/ERR*.fastq.gz
+
+#-----------------------------------------------------------------------------------
+# sbatch 0201_RawReads_QualityControl_FastaQC
+#this script takes the complite path, thus is ranable in anywere in homedirectory in terminal.
