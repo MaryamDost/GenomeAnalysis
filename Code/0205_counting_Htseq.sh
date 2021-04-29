@@ -36,7 +36,7 @@ htseq-count \
     -t CDS \
     -i ID \
     -s reverse \
-    $${f}.sorted.bam \
+    $path${f}.sorted.bam \
     ~/private/GenomeAnalysis/Analyses/genomeAssembly/0301Annotation_ProkkaLferriphilum/Lferriphilum.gff > ${f}.txt
 
     echo "done" 
