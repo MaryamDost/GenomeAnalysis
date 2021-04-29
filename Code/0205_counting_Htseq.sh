@@ -24,19 +24,20 @@ module load htseq
 # alignemnt files from bwa 
 # gff file from Anotated genome 
  
-path="~/private/GenomeAnalysis/Analyses/differentialExpressionAnalyses/03_mappingBWA"
+path="~/private/GenomeAnalysis/Analyses/differentialExpressionAnalyses/03_mappingBWA/"
 cd ~/private/GenomeAnalysis/Analyses/differentialExpressionAnalyses/04_countingHtseq
 
-for f in ERR2036629 ERR2036630 ERR2036631 ERR2036632 ERR2036633
+for f in ERR2036629  ERR2036632  ERR2117289  ERR2117292 ERR2036630  ERR2036633  ERR2117290 ERR2036631  ERR2117288  ERR2117291
 do
-htseq \
-    -count \
+htseq-count \
     -f bam \
     -r pos \
     -t CDS \
     -i ID \
     -s reverse \
+    echo "done" 
     $path${f}.sorted.bam \
+    echo "done" 
     ~/private/GenomeAnalysis/Analyses/genomeAssembly/0301Annotation_ProkkaLferriphilum/Lferriphilum.gff \
     > ${f}.txt
 
