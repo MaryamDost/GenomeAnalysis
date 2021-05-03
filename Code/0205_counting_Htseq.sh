@@ -23,6 +23,7 @@ module load htseq
 # -s reverse due to paired-end reads, the first read has to be on the same strand and the second read on the opposite strand.
 # alignemnt files from bwa 
 # gff file from Anotated genome 
+# head -n 2658 Lferriphilum.gff > Lferriphilum_withoutFasta.gff
  
 path="/home/maryad/private/GenomeAnalysis/Analyses/differentialExpressionAnalyses/03_mappingBWA/"
 pref="sorted.bam"
