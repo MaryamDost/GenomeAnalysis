@@ -14,16 +14,14 @@ module load prokka
 
 #--------- RUN PROKKA --------------------------------
 
-# input fasta file 
-# out dir 
-# prefix for files 
-
-#prokka \
-# ~/private/GenomeAnalysis/Analyses/genomeAssembly/01_assembly_out/WGS_assembly.contigs.fasta
-#~/private/GenomeAnalysis/Analyses/genomeAssembly/01_assembly_out/lferriphilum_genome.fasta
-# --outdir 0301Annotation_Prokkalferriphilum \
- #--prefix prokkaAnnotation_lferriphilum_genome
-
+#--outdir direction to output directory 
+#--prefix prefix for output files
+#--locustag  how the genes will be named in the output files
+# The second line specifies the species and strain used
+#--gram neg this species is gramnegative
+#--usegenu genus-specific BLAST databases for the annotation
+#--rfam search for ncRNAs 
+#--cpus amount of CPUs used
 
 # running prokka
 prokka \
@@ -31,4 +29,5 @@ prokka \
 --outdir 0301Annotation_Prokkalferriphilum --prefix Lferriphilum --locustag LFT \
 --genus Leptospirillum --species ferriphilum --strain DSM_14647 --gram neg\
 --usegenus --cpus 2 --rfam \
-
+#--------------------------------------------------
+# ran prokka with command sbatch 0103_AnnotationProkka.sh
