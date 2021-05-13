@@ -45,3 +45,4 @@ htseq-count \
  done
 
 #-------------------------------------------------
+#sbatch to run this file
