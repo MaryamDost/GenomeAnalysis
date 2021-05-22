@@ -1,0 +1,51 @@
+#-------load R packages-----
+
+module load R_packages
+
+#------run R--------
+R
+#------ library -----------------------------------
+
+library(DESeq2)
+
+#------ data --------------------------------------
+directory <- "/home/maryad/private/GenomeAnalysis/Analyses/differentialExpressionAnalyses/04_countingHtseq"
+sample_files <- c('ERR2036629.txt', 'ERR2036630.txt', 'ERR2036631.txt', 'ERR2036632.txt', 'ERR2036633.txt')
+condition_vector <- c('chemostat', 'chemostat', 'bioleaching', 'bioleaching', 'chemostat')
+
+sample_table <- data.frame(sampleName = sample_files,
+			   fileName = sample_files, 
+			   condition = condition_vector)
+
+sample_table$condition <- factor(sample_table$condition)
+
+
+ddsHTSeq <- DESeqDataSetFromHTSeqCount(sampleTable = sample_table,
+                                       directory = directory,
+                                       design= ~ condition)
+head(sample_table)
+
+#-------------------------MAplot--------------------------------------
+
+png('DEseq_plot.png')
+plotMA(DESeq(ddsHTSeq))
+dev.off()
+
+
+ddsHTSeq <- DESeq(ddsHTSeq)
+resAll <- results(ddsHTSeq)
+res <- results(ddsHTSeq, contrast = c("condition","chemostat","bioleaching"))
+resOrder <- res[order(res$pvalue),]
+png('DEseq_plot_PCA.png')
+
+#-----Creating file to identify significant genes----------
+
+lfc_matrix = as.data.frame(resOrdered[, c("log2FoldChange", "padj")])
+rownames(lfc_matrix) = resOrdered@rownames
+
+#data frame with sig features --> bind with annotation data
+sign_lfc_matrix = lfc_matrix[lfc_matrix$padj < 0.05 & !is.na(lfc_matrix$padj),]
+sign_lfc_matrix = merge(sign_lfc_matrix, combined, by.x = "row.names", by.y = "id")
+sign_lfc_matrix = sign_lfc_matrix[, !colnames(sign_lfc_matrix) %in% c("X")]
+
+write.csv(sign_lfc_matrix, "C:sign_genes.csv")
